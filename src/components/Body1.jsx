@@ -63,16 +63,7 @@ const Body1 = () => {
     const [loading, setLoading] = useState(false);
     const [allPagesFetched, setAllPagesFetched] = useState(false);
 
-    // useEffect(() => {
-    //     axios.get('https://gg-backend-assignment.azurewebsites.net/api/Events?code=FOX643kbHEAkyPbdd8nwNLkekHcL4z0hzWBGCd64Ur7mAzFuRCHeyQ==&type=reco')
-    //         .then(response => {
-    //             setEvents(response.data.events);
-    //         })
-    //         .catch(error => {
-    //             console.error('Error fetching events:', error);
-    //         });
-    // }, []);
-
+    
     useEffect(() => {
         const updatedImages = initialImages.map((image, index) => ({
             image,
@@ -98,32 +89,7 @@ const Body1 = () => {
         fetchEvents();
     }, [currentPage]);
 
-    const fetchEvents = () => {
-        if (allPagesFetched || currentPage === 6) return;
-
-        setLoading(true);
-        axios.get(`https://gg-backend-assignment.azurewebsites.net/api/Events?code=FOX643kbHEAkyPbdd8nwNLkekHcL4z0hzWBGCd64Ur7mAzFuRCHeyQ==&page=${currentPage}&type=upcoming`)
-            .then(response => {
-                const newEvents = response.data.events;
-                if (newEvents.length === 0) {
-                    setAllPagesFetched(true);
-                } else {
-                    setEvents1(prevEvents => [...prevEvents, ...newEvents.map(event => ({
-                        ...event,
-                        formattedDate: new Date(event.date).toLocaleString()
-                    }))]);
-                    setCurrentPage(prevPage => prevPage + 1);
-                    console.log(`Fetched data from page ${currentPage}`);
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching upcoming events:', error);
-            })
-            .finally(() => {
-                setLoading(false);
-            });
-    };
-
+   
     const handleScroll1 = () => {
         const container = containerRef1.current;
         if (container.scrollHeight - container.scrollTop === container.clientHeight) {
