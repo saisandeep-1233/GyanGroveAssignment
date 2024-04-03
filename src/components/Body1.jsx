@@ -63,15 +63,15 @@ const Body1 = () => {
     const [loading, setLoading] = useState(false);
     const [allPagesFetched, setAllPagesFetched] = useState(false);
 
-    // useEffect(() => {
-    //     axios.get('https://gg-backend-assignment.azurewebsites.net/api/Events?code=FOX643kbHEAkyPbdd8nwNLkekHcL4z0hzWBGCd64Ur7mAzFuRCHeyQ==&type=reco')
-    //         .then(response => {
-    //             setEvents(response.data.events);
-    //         })
-    //         .catch(error => {
-    //             console.error('Error fetching events:', error);
-    //         });
-    // }, []);
+     useEffect(() => {
+         axios.get('https://gg-backend-assignment.azurewebsites.net/api/Events?code=FOX643kbHEAkyPbdd8nwNLkekHcL4z0hzWBGCd64Ur7mAzFuRCHeyQ==&type=reco')
+            .then(response => {
+                 setEvents(response.data.events);
+             })
+             .catch(error => {
+                 console.error('Error fetching events:', error);
+             });
+     }, []);
 
     useEffect(() => {
         const updatedImages = initialImages.map((image, index) => ({
