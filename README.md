@@ -1,6 +1,8 @@
 Note:
 When deploying the code into Netlify I accidentally commented the part where I fetched the data from the api for Recommended shows in Body1.jsx component.After submitting the google form with Netlify live link and repository I have checked my mistake and I have uncommented the part and update the code in  my git repository.
 
+The project is in branch GyanGrove
+
 
 
 The project is a React-based web application that leverages Bootstrap to ensure responsiveness across different devices. It fetches data from an API and displays it using a responsive layout provided by Bootstrap. 
@@ -9,8 +11,9 @@ I also implemented infinite scrolling for the recommended shows section, by dyna
 
 Setup and Local Run Instructions:
 i)Clone the project from the git repository
-git clone https://github.com/saisandeep-1233/GyanGroveAssignment.git
+git clone -b GyanGrove https://github.com/saisandeep-1233/GyanGroveAssignment.git
 ii)Navigate to project directory
+cd GyanGroveAssignment
 iii)Install dependencies(npm i )
 iv)run the project (npm run dev)
 
