@@ -1,5 +1,5 @@
 Note:
-When deploying the code into Netlify I accidentally commented the part where I fetched the data from the api for Recommended shows.After submitting the google form with Netlify live link and repository I have checked my mistake and I have uncommented the part and update the code in  my git repository.
+When deploying the code into Netlify I accidentally commented the part where I fetched the data from the api for Recommended shows in Body1.jsx component.After submitting the google form with Netlify live link and repository I have checked my mistake and I have uncommented the part and update the code in  my git repository.
 
 
 
